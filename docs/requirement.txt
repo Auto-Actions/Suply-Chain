@@ -1,0 +1,1 @@
+Create a Solidity supply chain system smart contract. The smart contract owner can update items for the system

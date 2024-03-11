@@ -1,0 +1,18 @@
+
+sequenceDiagram
+    participant O as Owner
+    participant SC as SupplyChainContract
+    participant I as Item
+    O->>SC: addItem(name, description)
+    SC->>I: create Item
+    I-->>SC: return Item
+    SC-->>O: confirm addition
+    O->>SC: updateItem(itemId, status)
+    SC->>I: update status
+    I-->>SC: return updated Item
+    SC-->>O: confirm update
+    participant U as User
+    U->>SC: getItem(itemId)
+    SC->>I: fetch Item
+    I-->>SC: return Item
+    SC-->>U: display Item

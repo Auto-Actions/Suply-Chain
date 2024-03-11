@@ -1,0 +1,18 @@
+
+classDiagram
+    class SupplyChainContract {
+        -address owner
+        -mapping(uint256 => Item) items
+        +addItem(string name, string description) public
+        +updateItem(uint256 itemId, string status) public
+        +getItem(uint256 itemId) public view returns(Item)
+        +transferOwnership(address newOwner) public
+    }
+    class Item {
+        +uint256 id
+        +string name
+        +string description
+        +string status
+        +uint256 timestamp
+    }
+    SupplyChainContract --> Item : contains
